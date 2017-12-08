@@ -15,22 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::group(['middleware' => 'auth','namespace' => 'User',], function () {
-    
-});
 
 Route::middleware(['auth'])->group(function (){
     // auth App, laravel passport
     Route::get('/settings/developers',function (){
         return view('settings.auth');
     });
+
+    Route::resource('users','UserController');
+
+
 });

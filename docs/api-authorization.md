@@ -57,7 +57,7 @@ header('Location:' . $auth_uri . $query);
 ```
 // 用户选择认证后
 // 服务器会返回如下url
-// http://localhost/client01/callback.php?code=f1Tl3mBjQ71XK%2BFFHw40Z9r%2FfeCWWC6nIkUMQi864mjiiAMDIwOfnXZkkTCIs2lfBGav6W%2FJVdN1bIZ6U3wGSdKjXmD7DK0p9Umj51U2fUmdUf4cX3fCLYk%2FqpmhBorzX3hn%2FTCrbR93yMDZ%2Ba2qud8yQHo%2FcUJyurn%2B9TlRyoaQKG6sGZqutcYTCelOx8uokrN%2FqmP1SzXa%2BkHTeOdnOQzBZBEF6qKmKn2lkjrvtORmEifQ99bHfswIThFW9LpAvEskLlBh%2Fn%2BIsiYo7g7UphpdmV1ZVlw%2Fg3Y6KGrPB24ovF%2Fs4eiDtW%2B%2FisspRzzPH74YJ%2BuNLRVGYefE4vst8ISYTkbGkCGkBr%2Ff1QqhwJyiytz9JTu4S1S3rIfsAG6OllTPI8XKp8kfvkUSPXVkDTq8JVw2LB16RDKe8KjO%2BE406oDLkIwQh24uPVYvNoliO5eqL4zaAY8yLitRa5kYcic1TIgppjWXnsnPn%2BvtAYgCI4fOSUFtCHxP3ZVMEXuic30JwpvTAQiSsil5Rs4UHbdXuTZ7akrg2oIxJStFmAE09%2BW3W2H2enV0rye02zTOp2cwQD1WJJjp7HDE6%2Fub%2FnXYG4BGjiSqqqcSVhtSE2ZeiLR51vA3j2URuiAjYc%2B0Ak3vFInKn2OYqGYpq6CPkCc%2B07zmqWl2MrGKz0sOups%3D
+// http://localhost/client01/callback.php?code=f1Tl3mBjQ71XK%2BFFHw40Z9r%2FfeCWWC6nIkUMQi864mjiiAMDIwOfnXZkkTCIs2lfBGav6WcSVhtSE22MrGKz0sOups%3D
 ```
 
 上面的第四步中,客户端向认证服务器申请令牌的请求,包含以下参数:

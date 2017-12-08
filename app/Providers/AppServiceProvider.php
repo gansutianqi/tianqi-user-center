@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Observers\UserObserver;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // set Carbon localization
+        Carbon::setLocale('zh');
+        User::observe(UserObserver::class);
     }
 
     /**
