@@ -3,10 +3,9 @@
 + clone this repository
 + run `composer update`
 + make the `storage` and `bootstrap/cache` directory writable,and run below commander in you project root 
-    * run `chmod -R 777 storage`
-    * run `chomod -R 777 bootstrap/cache`
+    * run `chmod -R 777 storage bootstrap/cache`
 + copy `.env.example` to `.env` with `cp .env.example .env`, and give you own settings
-+ run `php artisan generate:key` generate a app key
++ run `php artisan key:generate` generate a app key
 + run `php artisan storage:link` this make your upload assets access public
 + run `php artisan migrate` or `php artisan migrate:refresh`
 + laravel-passport

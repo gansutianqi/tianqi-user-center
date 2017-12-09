@@ -10,7 +10,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-sm-2">
-								{{--TODO: 用户头像--}}
+								<img src="{{ Auth::user()->getAvatar() }}" alt="">
 							</div>
 
 							<div class="col-sm-8">
@@ -32,8 +32,8 @@
 
 					<div class="panel-body">
 						<dl class="dl-horizontal">
-							<dt>头像地址</dt>
-							<dd>{{ Auth::user()->profile->avatar_url }}</dd>
+							<dt>头像</dt>
+							<dd><a href="{{ url("/users/avatar/".Auth::user()->id."/edit") }}">修改</a></dd>
 
 							<dt>位置</dt>
 							<dd>{{ Auth::user()->profile->location }}</dd>
