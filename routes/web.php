@@ -19,19 +19,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::middleware(['auth'])->group(function (){
+Route::middleware(['auth'])->group(function () {
 
     // auth App, laravel passport
-    Route::get('/settings/developers',function (){
+    Route::get('/settings/developers', function () {
         return view('settings.auth');
     });
 
     // edit user avatar
-    Route::get('/users/avatar/{user}/edit','UserAvatarController@edit');
+    Route::get('/users/avatar', 'UserAvatarController@edit');
 
     // upload user avatar
-    Route::post('/users/avatar','UserAvatarController@update');
+    Route::post('/users/avatar', 'UserAvatarController@update');
 
-    Route::resource('users','UserController');
+    Route::resource('users', 'UserController');
 
 });

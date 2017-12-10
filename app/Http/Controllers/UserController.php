@@ -76,7 +76,6 @@ class UserController extends Controller
 
         $this->validate($request, [
             'name' => 'required|max:255',
-            'avatar_url' => 'nullable|url',
             'location' => 'max:255',
             'website' => 'nullable|url',
             'bio' => '',
@@ -86,9 +85,14 @@ class UserController extends Controller
             'name' => $request->input('name'),
         ]);
 
-        $user->profile()->update(array_except($request->input(), ['name', 'email', '_token', '_method']));
+        $user->profile()->update(
+            array_except(
+                $request->input(), ['name', 'email', '_token', '_method']
+            )
+        );
 
-        return redirect("/users/{$user->id}/edit")->with('status', 'Updated success!');
+        return redirect("/users/{$user->id}/edit")
+            ->with('status', '更新成功！');
     }
 
     /**

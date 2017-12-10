@@ -27,14 +27,11 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<span>个人资料</span>
-						<a href="{{ url('users/'.Auth::user()->id.'/edit') }}" class="pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+						<a href="{{ url('users/'.Auth::user()->id.'/edit') }}" class="pull-right"><i class="fa fa-pencil"></i></a>
 					</div>
 
 					<div class="panel-body">
 						<dl class="dl-horizontal">
-							<dt>头像</dt>
-							<dd><a href="{{ url("/users/avatar/".Auth::user()->id."/edit") }}">修改</a></dd>
-
 							<dt>位置</dt>
 							<dd>{{ Auth::user()->profile->location }}</dd>
 

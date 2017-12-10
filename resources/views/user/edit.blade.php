@@ -4,6 +4,11 @@
 	<div class="container">
 		<h4 class="page-header">个人资料</h4>
 		@if (Auth::user()->can('update',$user))
+
+			<p>
+				<a href="/users/avatar">修改头像</a>
+			</p>
+
 			<form action="{{ url('users/'.$user->id) }}" method="post">
 				{{ csrf_field() }}
 				{{ method_field('put') }}
@@ -16,12 +21,6 @@
 					<label for="email">电子邮箱</label>
 					<input type="text" id="email" name="email" class="form-control" value="{{ $user->email }}" disabled>
 				</div>
-
-				<div class="form-group">
-					<label for="avatar_url">用户头像</label>
-					<input type="text" id="avatar_url" name="avatar_url" class="form-control" value="{{ $user->profile->avatar_url }}">
-				</div>
-
 
 				<div class="form-group">
 					<label for="location">位置</label>
@@ -38,7 +37,7 @@
 					<textarea name="bio" id="bio" class="form-control">{{ $user->profile->bio }}</textarea>
 				</div>
 
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" class="btn btn-default">确认</button>
 
 			</form>
 		@else
