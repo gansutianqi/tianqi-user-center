@@ -47,7 +47,9 @@ class UserController extends Controller
     public function show(User $user)
     {
         $this->authorize('view', $user);
-        return $user;
+        return view('user.show', [
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -105,7 +107,6 @@ class UserController extends Controller
     {
         $this->authorize('delete', $user);
         $user->delete();
-        //TODO::
-        return redirect('/')->with('status', 'Deleted success!');
+        return redirect('/admin')->with('status', '成功删除用户！');
     }
 }

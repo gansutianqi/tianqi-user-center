@@ -11,7 +11,7 @@
 
 			<form action="{{ url('users/'.$user->id) }}" method="post">
 				{{ csrf_field() }}
-				{{ method_field('put') }}
+				{{ method_field('PUT') }}
 				<div class="form-group">
 					<label for="name">名称</label>
 					<input type="text" id="name" name="name" class="form-control" value="{{ $user->name }}">

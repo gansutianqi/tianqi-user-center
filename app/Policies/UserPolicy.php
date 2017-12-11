@@ -18,7 +18,7 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        return $user->id === $model->id;
+        return $this->admin($user) || $user->id === $model->id;
     }
 
     /**
@@ -41,7 +41,7 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        return $user->id === $model->id;
+        return $this->admin($user) || $user->id === $model->id;
     }
 
     /**
@@ -53,7 +53,12 @@ class UserPolicy
      */
     public function delete(User $user, User $model)
     {
-        return $user->id === $model->id;
+        return $this->admin($user) || $user->id === $model->id;
+    }
+
+    public function admin(User $user)
+    {
+        return $user->email === '20654039@qq.com';
     }
 
 }

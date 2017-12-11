@@ -7,8 +7,9 @@
 			<div class="col-md-8">
 				<h4 class="page-header">用户头像</h4>
 
-				<div class="alert alert-warning">
+				<div class="alert alert-info alert-dismissable" role="alert">
 					先点击“+”符号，上传并裁剪你的头像，然后点击确认按钮提交头像。
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
 
 				<div class="image-upload-crop">
