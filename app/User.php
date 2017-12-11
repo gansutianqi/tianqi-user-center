@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     public function getAvatar()
     {
-        return Storage::url($this->profile->avatar_url);
+        return config('app.url') . Storage::url($this->profile->avatar_url);
     }
 
 }
