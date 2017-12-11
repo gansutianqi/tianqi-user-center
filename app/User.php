@@ -43,7 +43,7 @@ class User extends Authenticatable
     public function getAvatar()
     {
         $domain = config('app.url');
-        return explode('/', $domain)[1] . Storage::url($this->profile->avatar_url);
+        return $domain . Storage::url($this->profile->avatar_url);
     }
 
 }
