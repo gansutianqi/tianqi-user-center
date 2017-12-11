@@ -7,7 +7,7 @@
 				<div class="col-md-6 col-md-offset-3">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							授权请求
+							<h4>授权请求</h4>
 						</div>
 						<div class="panel-body">
 							<!-- Introduction -->
