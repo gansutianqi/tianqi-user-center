@@ -1,91 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-	<title>{{ config('app.name') }} - Authorization</title>
+@section('content')
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						授权请求
+					</div>
+					<div class="panel-body">
+						<!-- Introduction -->
+						<p><strong>{{ $client->name }}</strong> 请求允许进入你的帐户。</p>
 
-	<!-- Styles -->
-	<link href="/css/app.css" rel="stylesheet">
+						<!-- Scope List -->
+						@if (count($scopes) > 0)
+							<div class="scopes">
+								<p><strong>这个应用程序将能够：</strong></p>
 
-	<style>
-		.passport-authorize .container {
-			margin-top: 30px;
-		}
+								<ul>
+									@foreach ($scopes as $scope)
+										<li>{{ $scope->description }}</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
 
-		.passport-authorize .scopes {
-			margin-top: 20px;
-		}
+						<div class="buttons">
+							<!-- Authorize Button -->
+							<form method="post" action="/oauth/authorize">
+								{{ csrf_field() }}
 
-		.passport-authorize .buttons {
-			margin-top: 25px;
-			text-align: center;
-		}
+								<input type="hidden" name="state" value="{{ $request->state }}">
+								<input type="hidden" name="client_id" value="{{ $client->id }}">
+								<button type="submit" class="btn btn-success btn-approve">授权</button>
+							</form>
 
-		.passport-authorize .btn {
-			width: 125px;
-		}
+							<!-- Cancel Button -->
+							<form method="post" action="/oauth/authorize">
+								{{ csrf_field() }}
+								{{ method_field('DELETE') }}
 
-		.passport-authorize .btn-approve {
-			margin-right: 15px;
-		}
-
-		.passport-authorize form {
-			display: inline;
-		}
-	</style>
-</head>
-<body class="passport-authorize">
-<div class="container">
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					授权请求
-				</div>
-				<div class="panel-body">
-					<!-- Introduction -->
-					<p><strong>{{ $client->name }}</strong> 请求允许进入你的帐户。</p>
-
-					<!-- Scope List -->
-					@if (count($scopes) > 0)
-						<div class="scopes">
-							<p><strong>这个应用程序将能够：</strong></p>
-
-							<ul>
-								@foreach ($scopes as $scope)
-									<li>{{ $scope->description }}</li>
-								@endforeach
-							</ul>
+								<input type="hidden" name="state" value="{{ $request->state }}">
+								<input type="hidden" name="client_id" value="{{ $client->id }}">
+								<a href="javascript:history.back()" class="btn btn-danger">取消</a>
+							</form>
 						</div>
-					@endif
-
-					<div class="buttons">
-						<!-- Authorize Button -->
-						<form method="post" action="/oauth/authorize">
-							{{ csrf_field() }}
-
-							<input type="hidden" name="state" value="{{ $request->state }}">
-							<input type="hidden" name="client_id" value="{{ $client->id }}">
-							<button type="submit" class="btn btn-success btn-approve">授权</button>
-						</form>
-
-						<!-- Cancel Button -->
-						<form method="post" action="/oauth/authorize">
-							{{ csrf_field() }}
-							{{ method_field('DELETE') }}
-
-							<input type="hidden" name="state" value="{{ $request->state }}">
-							<input type="hidden" name="client_id" value="{{ $client->id }}">
-							<a href="javascript:history.back()" class="btn btn-danger">取消</a>
-						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-</body>
-</html>
+@stop
