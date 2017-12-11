@@ -77,10 +77,9 @@
 							{{ csrf_field() }}
 							{{ method_field('DELETE') }}
 
-							{{ dd($request) }}
 							<input type="hidden" name="state" value="{{ $request->state }}">
 							<input type="hidden" name="client_id" value="{{ $client->id }}">
-							<button class="btn btn-danger">取消</button>
+							<a href="javascript:history.back()" class="btn btn-danger">取消</a>
 						</form>
 					</div>
 				</div>
