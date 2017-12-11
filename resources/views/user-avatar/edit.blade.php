@@ -8,13 +8,13 @@
 				<h4 class="page-header">用户头像</h4>
 
 				<div class="alert alert-warning">
-					先点击“+”符号，上传并裁剪你的头像，然后点击确认按钮提交的头像。
+					先点击“+”符号，上传并裁剪你的头像，然后点击确认按钮提交头像。
 				</div>
 
 				<div class="image-upload-crop">
 
 					<a href="javascript:;" class="image-upload-crop__upload-file" style="background-image: url('{{ Auth::user()->getAvatar() }}')">
-						<span class="glyphicon glyphicon-plus"></span>
+						<i class="fa fa-plus"></i>
 						<input type="file" id="image-file" name="image-file">
 					</a>
 					<div class="image-upload-crop__upload-preview"></div>

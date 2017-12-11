@@ -87,7 +87,7 @@
                 <div class="links">
                     <a href="http://tq0.com" target="_blank">官网</a>
                     <a href="http://ds8.com.cn" target="_blank">渭源电商</a>
-                    <a href="http://soups.tq0.com" target="_blank">鸡汤文</a>
+                    <a href="http://yoursoups.com" target="_blank">鸡汤文</a>
                 </div>
             </div>
         </div>
