@@ -18,10 +18,22 @@ use Illuminate\Http\Request;
 });*/
 
 
-Route::middleware(['auth:api'])->group(function (){
+Route::middleware(['auth:api'])->group(function () {
 
     Route::get('/user', function (Request $request) {
-        return $request->user();
+        $user = $request->user();
+        $output = [
+            'id' => $user->id,
+            'name' => $user->name,
+            'email' => $user->email,
+            'created_at' => $user->created_at,
+            'udpated_at' => $user->updated_at,
+            'avatar_url' => $user->profile->avatar_url,
+            'location' => $user->profile->location,
+            'website' => $user->profile->website,
+            'bio' => $user->profile->bio,
+        ];
+        return response()->json($output);
     })->middleware('scopes:user_info');
 
 
