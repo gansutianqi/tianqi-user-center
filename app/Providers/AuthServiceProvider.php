@@ -30,7 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         Passport::routes();
 
         Passport::tokensCan([
-            'user_info' => 'Get User infomation',
+            'user_info' => '获取用户名，电子邮件地址，头像，位置等信息',
         ]);
 
         //
