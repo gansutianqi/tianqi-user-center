@@ -37,7 +37,6 @@
 									{{ csrf_field() }}
 									{{ method_field('DELETE') }}
 									<button
-											onclick="confirm('你确定要删除？')"
 											class="btn btn-danger"
 											type="submit"
 											id="delete-user-{{ $user->id }}">
@@ -54,3 +53,19 @@
 		</div>
 	</div>
 @stop
+
+@push('scripts')
+	<script>
+        $(function () {
+            $('form button').on('click', function (e) {
+                e.preventDefault();
+                var $this = $(this), confirm = window.confirm("删除后无法恢复，你确定要删除吗？");
+                if (confirm) {
+                    $this.closest('form').submit();
+                } else {
+                    return null;
+                }
+            });
+        });
+	</script>
+@endpush
