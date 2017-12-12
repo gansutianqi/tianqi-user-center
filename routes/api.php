@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 
 Route::middleware(['auth:api'])->group(function () {
 
+    // return user information
     Route::get('/user', function (Request $request) {
         $user = $request->user();
         $output = [
@@ -27,7 +28,6 @@ Route::middleware(['auth:api'])->group(function () {
             'name' => $user->name,
             'email' => $user->email,
             'created_at' => $user->created_at,
-            'udpated_at' => $user->updated_at,
             'avatar_url' => $user->getAvatar(),
             'location' => $user->profile->location,
             'website' => $user->profile->website,
