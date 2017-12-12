@@ -5,11 +5,11 @@ All examples of below is use Guzzle as a HTTP client for request a uri, before g
 If you want experience with our API you can create a Personal Access Token, it without through the typical authorization code redirect flow.
 
 #### get user info
-+ uri `http://user.tq0.com/api/user`
++ URI `http://user.tq0.com/api/user`
 + HTTP method `get`
 + need authorization `Authorization: Bearer YOUR_TOKEN`
 + description, get user information
-+ return format, json
++ return format`json`
 ```json
 {
   "id":14,
