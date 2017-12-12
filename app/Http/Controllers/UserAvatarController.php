@@ -16,8 +16,10 @@ class UserAvatarController extends Controller
      * @param User $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(User $user)
+    public function edit(Request $request)
     {
+        $this->authorize('editAvatar', $request->user());
+
         return view('user-avatar.edit');
     }
 
@@ -28,6 +30,7 @@ class UserAvatarController extends Controller
      */
     public function update(Request $request)
     {
+        $this->authorize('editAvatar', $request->user());
 
         $this->validate($request, [
             'cropDetail' => 'required',
@@ -54,7 +57,7 @@ class UserAvatarController extends Controller
             'avatar_url' => $path,
         ]);
 
-        session()->flash('status','成功修改头像！');
+        session()->flash('status', '成功修改头像！');
 
         return response()->json([
             'message' => 'updated success!',

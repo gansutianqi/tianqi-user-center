@@ -59,7 +59,8 @@
         $(function () {
             $('form button').on('click', function (e) {
                 e.preventDefault();
-                var $this = $(this), confirm = window.confirm("删除后无法恢复，你确定要删除吗？");
+                var $this = $(this),
+                    confirm = window.confirm("删除后无法恢复，你确定要删除吗？");
                 if (confirm) {
                     $this.closest('form').submit();
                 } else {

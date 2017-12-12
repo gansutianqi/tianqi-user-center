@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\User;
+use Illuminate\Support\Facades\Storage;
 
 class UserObserver
 {
@@ -22,6 +23,16 @@ class UserObserver
     public function deleted(User $user)
     {
         $user->profile()->delete();
+    }
+
+    /**
+     * Deleting
+     */
+    public function deleting(User $user)
+    {
+        // delete avatar image in the disk when a user is deleting
+        $path = $user->profile->avatar_url;
+        Storage::disk('public')->delete($path);
     }
 }
 

@@ -56,9 +56,25 @@ class UserPolicy
         return $this->admin($user) || $user->id === $model->id;
     }
 
+    /**
+     * Determine whether a user is admin
+     * @param User $user
+     * @return bool
+     */
     public function admin(User $user)
     {
         return $user->email === '20654039@qq.com';
+    }
+
+    /**
+     * Determine whether the user can edit their avatar
+     * @param User $user
+     * @param User $model
+     * @return bool
+     */
+    public function editAvatar(User $user, User $model)
+    {
+        return $user->id === $model->id;
     }
 
 }
