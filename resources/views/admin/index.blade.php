@@ -22,6 +22,9 @@
 							<td>{{ $user->email }}</td>
 							<td>{{ $user->created_at }}</td>
 							<td>
+								<a href="{{ url('/users/'.$user->id) }}" class="btn btn-info">
+									<i class="fa fa-eye"></i>
+								</a>
 								<a class="btn btn-primary"
 								   href="{{ url('/users/'.$user->id.'/edit') }}">
 									<i class="fa fa-pencil"></i>
@@ -41,9 +44,6 @@
 										<i class="fa fa-trash"></i>
 									</button>
 								</form>
-								<a href="{{ url('/users/'.$user->id) }}" class="btn btn-info">
-									<i class="fa fa-eye"></i>
-								</a>
 							</td>
 						</tr>
 					@endforeach
