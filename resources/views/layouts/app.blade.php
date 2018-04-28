@@ -12,7 +12,7 @@
 	<title>{{ config('app.name', '天奇用户中心') }}</title>
 
 	<!-- Styles -->
-	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{ mix('css/app.css') }}" rel="stylesheet">
 	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	@stack('css')
 </head>
@@ -115,7 +115,7 @@
 </footer>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 @stack('scripts')
 </body>
 </html>

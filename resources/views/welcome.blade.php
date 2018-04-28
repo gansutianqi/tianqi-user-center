@@ -74,7 +74,6 @@
                     @else
                         <a href="{{ url('/login') }}">登陆</a>
                         <a href="{{ url('/register') }}">注册</a>
-                        <a href="{{ url('/password/reset') }}">重置密码</a>
                     @endif
                 </div>
             @endif
