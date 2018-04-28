@@ -6,7 +6,6 @@
     * run `chmod -R 777 storage bootstrap/cache`
 + copy `.env.example` to `.env` with `cp .env.example .env`, and give you own settings
 + run `php artisan key:generate` generate a app key
-+ config your database in the `.env` file
 + run `php artisan storage:link` this make your upload assets access public
 + run `php artisan migrate` or `php artisan migrate:refresh`
 + laravel-passport
